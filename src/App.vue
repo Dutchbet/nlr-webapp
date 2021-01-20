@@ -3,6 +3,7 @@
     <v-navigation-drawer app
     permanent
     left
+
     >
       <v-list-item>
         <v-list-item-content>

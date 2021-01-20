@@ -1,30 +1,42 @@
 <template>
-<v-container class="my-12">
-  <div class="Activities">
-    <Plotly :data="data" :layout="layout" :display-mode-bar="false"></Plotly>
-  </div>
-</v-container>
-
+  <v-container>
+    <v-card>
+      <v-tabs v-model="tab" background-color="primary" dark>
+        <v-tab v-for="item in items" :key="item.tab">
+          {{ item.tab }}
+        </v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="tab">
+        <v-tab-item v-for="item in items" :key="item.tab">
+          <v-card flat>
+            <v-card-text>
+              <component v-bind:is="item.content"></component>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-
-import { Plotly } from 'vue-plotly'
+import today from '@/components/activities-today';
+import earlier from '@/components/activities-earlier';
 
 export default {
-  name: 'Activities',
   components: {
-    Plotly
+    today,
+    earlier
   },
-  data:{
-    data:[{
-      x: [1,2,3,4],
-      y: [10,15,13,17],
-      type:"scatter"
-    }],
-    layout:{
-      title: "My graph"
-    }
+  data() {
+    return {
+      tab: null,
+      items: [
+        { tab: 'Today', content: 'today' },
+        { tab: 'Earlier', content: 'earlier' }
+
+      ]
+    };
   }
-}
+};
+</script>
