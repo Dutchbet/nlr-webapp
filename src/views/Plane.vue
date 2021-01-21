@@ -16,6 +16,7 @@
         <v-tab-item v-for="item in items" :key="item.tab">
           <v-card flat>
             <v-card-text>
+              <component v-bind:is="item.content"></component>
             </v-card-text>
           </v-card>
         </v-tab-item>
@@ -25,12 +26,12 @@
 </template>
 
 <script>
-import data from "@/components/plane-data";
+import planedata from "@/components/plane-data";
 import sensorlist from "@/components/plane-sensorlist";
 import model from "@/components/plane-3dmodel";
 export default {
   components: {
-    data,
+    planedata,
     sensorlist,
     model,
   },
@@ -38,7 +39,7 @@ export default {
     return {
       tab: null,
       items: [
-        { tab: "Data", content: "data" },
+        { tab: "Data", content: "planedata" },
         { tab: "Sensor list", content: "sensorlist" },
         { tab: "3D Model", content: "model" },
       ],

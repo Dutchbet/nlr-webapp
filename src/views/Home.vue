@@ -95,9 +95,3 @@ export default {
   },
 };
 </script>
-
-
-
-<!--
-:to="{name: 'Plane', params: {id: 456}}"
--->
