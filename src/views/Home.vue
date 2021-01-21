@@ -10,7 +10,7 @@
         <v-tab-item v-for="item in items" :key="item.tab">
           <v-card flat>
             <v-card-text>
-              <component v-bind:is="item.content" :headers="headers" :planedata="Planes" :to="item.to" link></component>
+              <component v-bind:is="item.content" :headers="headers" :planedata="Planes" link></component>
             </v-card-text>
           </v-card>
         </v-tab-item>
@@ -52,7 +52,7 @@ export default {
           tailnumber: "J-468",
           date: "24-10-2020",
           priority: "SAFE",
-          to: '/activities',
+          
         },
         {
           header: "Bomb release error",
@@ -95,3 +95,9 @@ export default {
   },
 };
 </script>
+
+
+
+<!--
+:to="{name: 'Plane', params: {id: 456}}"
+-->

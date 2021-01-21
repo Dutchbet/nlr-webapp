@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import All from '../views/All.vue'
 import Activities from '../views/Activities.vue'
+import Planes from '../views/Plane.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -11,6 +12,12 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/Activities/:id',
+    name: 'Plane',
+    component: Planes
+  },
+  
   {
     path: '/Activities',
     name: 'Activities',
