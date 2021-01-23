@@ -18,7 +18,7 @@ export default {
     data: () => ({
     data:[{
       x: [],
-      y: [100,100,100,100],
+      y: [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100],
       type:"scatter",
       name:'Exceeding limit value',
       line: {color:"red"},
@@ -26,9 +26,22 @@ export default {
       
     },{
       x: [],
-      y: [15,35,13,17],
+      y: [15,35,13,17,70,90,110,100,50],
       type:"scatter",
-      mode:"lines"
+      mode:"lines",
+      name:"High Frequency Energy"
+    },{
+      x: [],
+      y: [55,35,13,17,100,50,25,40,70,80],
+      type:"scatter",
+      mode:"lines",
+      name:"GG 1R Cib"
+    },{
+      x: [],
+      y: [25,45,33,17,55,23,42,170,20,40,80,100,100,20],
+      type:"scatter",
+      mode:"lines",
+      name:"PT 1R Cib"
     }],
     layout:{
       title: "My graph",
@@ -40,12 +53,12 @@ export default {
     created:function(){
       this.loading()
     },
-
+/**loop om X-axis gelijk tek */
       methods:{
       loading(){
         console.log(this.data.length)
         for (var [i] of this.data.entries()){
-          this.data[i].x=["Jan","Feb","Mar","Apr"]
+          this.data[i].x=["Jan","Feb","Mar","Apr","Mei","jun","Jul","Aug","Sep","Okt","Nov","Dec"]
         console.log()
         }
       },

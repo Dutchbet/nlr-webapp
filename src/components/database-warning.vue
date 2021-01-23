@@ -36,7 +36,6 @@
 
               PlaneClick(value) {
     this.$router.push({ name: 'Plane', params: { id: value.tailnumber  } });
-    console.log(id)
     }
     }
   }
