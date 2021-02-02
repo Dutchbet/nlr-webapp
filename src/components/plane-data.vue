@@ -1,7 +1,6 @@
 <template>
-<div class="post">
-    <h1> data shizzle</h1>
- <Plotly :data="data" :layout="layout" :display-mode-bar="false"></Plotly>
+<div class="wrapper">
+ <Plotly :data="data" :layout="layout" :display-mode-bar="true"></Plotly>
   </div>
  
 
@@ -44,7 +43,6 @@ export default {
       name:"PT 1R Cib"
     }],
     layout:{
-      title: "My graph",
       yaxis: {title:{text:"Percentage"}},
       xaxis: {title:{text:"Maand"}}
     },
@@ -56,7 +54,6 @@ export default {
 /**loop om X-axis gelijk tek */
       methods:{
       loading(){
-        console.log(this.data.length)
         for (var [i] of this.data.entries()){
           this.data[i].x=["Jan","Feb","Mar","Apr","Mei","jun","Jul","Aug","Sep","Okt","Nov","Dec"]
         console.log()
